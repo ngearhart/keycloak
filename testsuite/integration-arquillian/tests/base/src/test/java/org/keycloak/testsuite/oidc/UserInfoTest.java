@@ -168,7 +168,7 @@ public class UserInfoTest extends AbstractKeycloakTest {
             WebTarget userInfoTarget = UserInfoClientUtil.getUserInfoWebTarget(client);
             Response response = userInfoTarget.request()
                     .header(HttpHeaders.AUTHORIZATION, "bearer " + accessTokenResponse.getToken())
-                    .post(Entity.form(new Form()));
+                    .post(null);
 
             testSuccessfulUserInfoResponse(response);
 
