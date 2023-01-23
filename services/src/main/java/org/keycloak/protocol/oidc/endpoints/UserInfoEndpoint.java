@@ -136,7 +136,7 @@ public class UserInfoEndpoint {
         setupCors();
 
         // Try header first
-        HttpHeaders headers = request.getHttpHeaders();
+        HttpHeaders headers = session.getContext().getRequestHeaders();
         String accessToken = this.appAuthManager.extractAuthorizationHeaderTokenOrReturnNull(headers);
         authorization(accessToken);
 
